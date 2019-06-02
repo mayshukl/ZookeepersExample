@@ -29,13 +29,13 @@ public class ZookeeperSupport {
         this.lockNodePath=lockNodePath;
     }
     public ZookeeperSupport(ZooKeeper zooKeeper,String lockNodePath,int retryCount){
-        new ZookeeperSupport(zooKeeper,lockNodePath,retryCount,0);
+        this(zooKeeper,lockNodePath,retryCount,0);
     }
     public ZookeeperSupport(ZooKeeper zooKeeper,String lockNodePath,long waitBeforeRetry){
-        new ZookeeperSupport(zooKeeper,lockNodePath,0,waitBeforeRetry);
+        this(zooKeeper,lockNodePath,0,waitBeforeRetry);
     }
     public ZookeeperSupport(ZooKeeper zooKeeper,String lockNodePath) {
-        new ZookeeperSupport(zooKeeper,lockNodePath,0,0);
+        this(zooKeeper,lockNodePath,0,0);
     }
     
     public Object retryOperation(ZookeeperOperations zookeeperOperations) throws InterruptedException, KeeperException {
