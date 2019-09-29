@@ -25,6 +25,7 @@ public class DistributedProcess {
         }
         @Override
         public void process(WatchedEvent watchedEvent) {
+            System.out.println("Root Node Watch");
             if(watchedEvent.getType().equals(Event.EventType.NodeDataChanged)){
                 try {
                     String data=zookeeperSupport.getDataOnRoot(this);
